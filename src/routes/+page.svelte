@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Navbar from '$lib/components/navbar.svelte';
+	import Navbar from '../components/navbar.svelte';
 	import type { Category } from '$lib/model/category';
 	import type { Product } from '$lib/model/product';
 
