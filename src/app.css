@@ -3,5 +3,9 @@
 @plugin '@tailwindcss/typography';
 
 @utility category-active {
-	@apply -translate-x-1 bg-gray-100 font-bold;
+	@apply bg-black/5;
+}
+
+@utility bg-primary {
+	@apply bg-[#4B3621];
 }

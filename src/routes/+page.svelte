@@ -2,6 +2,7 @@
 	import Navbar from '../components/navbar.svelte';
 	import type { Category } from '$lib/model/category';
 	import type { Product } from '$lib/model/product';
+	import ItemCard from '../components/item_card.svelte';
 
 	let current_category = $state(0);
 
@@ -52,23 +53,19 @@
 </script>
 
 <Navbar {categories} states={{ current_category }} />
-
-<main class="ml-[25%] h-screen bg-slate-50 px-4 py-2">
-	<h3 class="py-8 text-2xl font-bold">
-		{categories.find((category) => category.id == current_category)?.name}
-	</h3>
-	<button onclick={() => (current_category += 1)}>Click This</button>
-	<section class="grid grid-cols-3 gap-4 *:h-80 *:rounded-lg *:bg-white *:shadow">
-		{#each products as product}
-			<div class="">
-				<div class="h-60 w-full rounded-t-lg bg-gray-300">
-					<!-- image -->
-				</div>
-				<div class="flex w-full flex-col p-2">
-					<span class="block text-lg font-medium">{product.name}</span>
-					<span class="mt-auto block text-lg font-semibold">{format_idr(product.price)}</span>
-				</div>
-			</div>
-		{/each}
+<main
+	class="mt-12 ml-[25%] h-max pr-8
+"
+>
+	<h1 class="border-b-2 pb-2 pl-2 text-4xl font-semibold tracking-[8%]">Coffee</h1>
+	<section class="mt-2 grid grid-cols-1 gap-4 p-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+		<ItemCard name="Cappucino" price="25.000" />
+		<ItemCard name="Espresso Matcha" price="25.000" />
+		<ItemCard name="Latte" price="25.000" />
+		<ItemCard name="Machiato" price="25.000" />
+		<ItemCard name="Kopi Susu" price="25.000" />
+		<ItemCard name="Cold Brew" price="25.000" />
+		<ItemCard name="Kopi yang bikin adem" price="25.000" />
 	</section>
 </main>
+<div class="fixed"></div>
